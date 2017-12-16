@@ -1,0 +1,71 @@
+<head>
+  <title>憶想城市</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../../my_meracle/favicon.ico">
+</head>
+
+<body>
+
+  <div class="land">
+    <img src="./assets/land.png" alt="" class="shake" draggable="false">
+  </div>
+  <div class="city">
+    <img src="./assets/city.png" alt="" id="city" draggable="false">
+  </div>
+  <div class="farm">
+    <img src="./assets/farm.png" alt="" id="farm" draggable="false">
+  </div>
+  <div class="bakery">
+    <img src="./assets/bakery.png" alt="" id="bakery" draggable="false">
+  </div>
+  <div class="x1">
+    <div className="cloud">
+      <img src="./assets/cloud.png" alt="" draggable="false" />
+    </div>
+  </div>
+  <div class="x2">
+    <div className="cloud">
+      <img src="./assets/cloud.png" alt="" draggable="false" />
+    </div>
+  </div>
+  <div class="x3">
+    <div className="cloud">
+      <img src="./assets/cloud.png" alt="" draggable="false" />
+    </div>
+  </div>
+  <div class="x4">
+    <div className="cloud">
+      <img src="./assets/cloud.png" alt="" draggable="false" />
+    </div>
+  </div>
+  <div class="x5">
+    <div className="cloud">
+      <img src="./assets/cloud.png" alt="" draggable="false" />
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+  if (!window.account | !window.authorization | !window.child_name) {
+    window.location.href = 'https://www.meracle.me/my_meracle/dashboard/';
+  }
+  var audio = new Audio('./map_hover.mp3');
+  document.getElementById("bakery").onclick = function () {
+    var newWindow = window.open("../../Game/BakeryGame/game_first_page.html");
+    newWindow.account = window.account;
+    newWindow.authorization = window.authorization;
+    newWindow.child_name = window.child_name;
+  }
+  document.getElementById("farm").onclick = function () {
+    var newWindow = window.open("../../Game/FarmerGame/farmer.html");
+    newWindow.account = window.account;
+    newWindow.authorization = window.authorization;
+    newWindow.child_name = window.child_name;
+  }
+  $(".farm img, .bakery img").mouseover(
+    function () {
+      audio.play();
+    })
+</script>
